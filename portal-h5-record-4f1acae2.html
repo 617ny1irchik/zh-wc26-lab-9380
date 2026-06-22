@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 导航介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f7f5;
+            color: #222;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 1.2rem 0 3rem 0;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0 0.6rem 0;
+            border-bottom: 1px solid #e3e1dd;
+            margin-bottom: 2.8rem;
+        }
+        .top-nav .logo {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            color: #111;
+        }
+        .top-nav .logo span {
+            color: #b7956b;
+        }
+        .top-nav a {
+            font-size: 0.9rem;
+            color: #3a3a3a;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.15s;
+        }
+        .top-nav a:hover {
+            border-bottom-color: #b7956b;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            margin-bottom: 0.8rem;
+            color: #1e1e1e;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #5c5c5c;
+            max-width: 580px;
+        }
+        .hero .sub a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b7956b;
+        }
+        .hero .sub a:hover {
+            color: #b7956b;
+        }
+
+        /* 三个场景模块 */
+        .section-title {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #6b5f52;
+            margin: 2.8rem 0 1.4rem 0;
+            text-transform: uppercase;
+        }
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 1.6rem;
+        }
+        .scene-card {
+            flex: 1 1 180px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+        .scene-card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+        .scene-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #1e1e1e;
+        }
+        .scene-card p {
+            font-size: 0.9rem;
+            color: #5a5a5a;
+            line-height: 1.6;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin: 2.4rem 0 1.8rem 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .faq-summary h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 1rem;
+        }
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #222;
+            margin-bottom: 0.1rem;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-left: 0;
+        }
+        .faq-item a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b7956b;
+        }
+        .faq-item a:hover {
+            color: #b7956b;
+        }
+
+        /* 底部 */
+        .footer-note {
+            border-top: 1px solid #e3e1dd;
+            padding-top: 1.8rem;
+            margin-top: 2.4rem;
+            font-size: 0.8rem;
+            color: #7d7d7d;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 530px) {
+            body { padding: 0 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .top-nav .logo { font-size: 1rem; }
+            .scenes { gap: 1rem; }
+            .scene-card { flex: 1 1 100%; }
+            .faq-summary { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <div class="logo">⚽ <span>世界杯</span> 导航</div>
+        <a href="https://portal-h5-fifaworldcup.com">世界杯</a>
+    </nav>
+
+    <!-- hero 介绍 -->
+    <div class="hero">
+        <h1>稳定入口与页面说明</h1>
+        <div class="sub">
+            四年一度的赛事牵动全球目光，而一个可靠的信息起点同样重要。<a href="https://portal-h5-fifaworldcup.com">世界杯</a> 
+            官方聚合页整合了赛程、队伍与数据模块，为球迷提供清晰、低延迟的访问体验。
+            本文从使用场景和功能结构出发，帮助你快速了解这个轻量导航入口的定位。
+        </div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="section-title">· 典型使用场景</div>
+    <div class="scenes">
+        <div class="scene-card">
+            <h3>赛程追踪</h3>
+            <p>小组赛到淘汰赛，每日对阵与开球时间一目了然。无需在多个页面间跳转，当前阶段与已完赛结果集中呈现。</p>
+        </div>
+        <div class="scene-card">
+            <h3>队伍与积分</h3>
+            <p>各小组排名、净胜球、交锋记录等基础数据持续更新。页面结构克制，重点信息优先展示，减少冗余干扰。</p>
+        </div>
+        <div class="scene-card">
+            <h3>关键数据</h3>
+            <p>射手榜、助攻、红黄牌等核心统计聚合在统一入口下，方便快速横向比较，适合赛间浏览与信息回顾。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-summary">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <strong>页面加载与稳定性</strong>
+            <p>该入口基于轻量化设计，首屏加载内容优先，无冗余插件。建议在稳定的网络环境下使用，以获得流畅的更新体验。</p>
+        </div>
+        <div class="faq-item">
+            <strong>数据更新节奏</strong>
+            <p>赛程与结果随官方信号同步，通常在比赛结束后数分钟内完成关键数据刷新。积分与排名根据赛果自动调整。</p>
+        </div>
+        <div class="faq-item">
+            <strong>与其他平台的关系</strong>
+            <p>本页面是官方赛事信息的聚合导航之一，与移动端、电视转播数据同源。如需更详细的比赛报告或视频回放，可跳转至对应合作平台。</p>
+        </div>
+        <div class="faq-item">
+            <strong>如何快速回到首页</strong>
+            <p>任何时候点击顶部导航栏的「<a href="https://portal-h5-fifaworldcup.com">世界杯</a>」链接，即可返回聚合总览页，无需使用浏览器回退。</p>
+        </div>
+    </div>
+
+    <!-- 结尾 -->
+    <div class="footer-note">
+        以简洁的导航逻辑，连接赛事核心信息 · 页面内容仅供介绍参考
+    </div>
+
+</div>
+</body>
+</html>
